@@ -1,0 +1,349 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+*:focus,
+*::placeholder {
+  outline: none;
+  color: white;
+}
+
+a,
+li {
+  text-decoration: none;
+  color: black;
+  list-style: none;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+}
+
+.input-fade-out {
+  animation-name: fadeInput;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInput {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    position: initial;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.text-fade-in {
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.removetodo {
+  text-decoration: line-through;
+}
+
+.removetododiv {
+  animation: fade-out2 500ms forwards;
+}
+
+@keyframes fade-out2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.modal {
+  gap: 1em;
+  min-width: 17.6rem;
+  max-width: 27rem;
+  padding: 8%;
+  background-color: transparent;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5%;
+  top: 47%;
+  left: 6%;
+}
+.modal::backdrop {
+  background: none;
+}
+
+.modal[open] {
+  animation: slide-up 500ms forwards;
+}
+
+.modal[closing] {
+  display: block;
+  inset: 1;
+  pointer-events: none;
+  animation: slide-down 500ms forwards;
+}
+
+.top-todo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  height: 10rem;
+  margin: 5% 0;
+}
+
+.todo-input {
+  width: 96%;
+}
+
+body {
+  padding: 8%;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-image: url("/images/darkmountain.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+}
+
+.profile {
+  cursor: pointer;
+  transition: all 500ms ease;
+  color: white;
+}
+.profile:hover {
+  color: white;
+}
+
+.name-input,
+.focus-input {
+  width: 7.4rem;
+  border-color: white;
+  transition: all 500ms ease;
+}
+.name-input:hover,
+.focus-input:hover {
+  border-bottom: 2px solid white;
+}
+.name-input::placeholder,
+.focus-input::placeholder {
+  font-style: italic;
+  color: white;
+}
+
+.focus-input {
+  width: 11rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 80vh;
+  gap: 1em;
+}
+
+.clock-greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+}
+.clock-greeting h1 {
+  font-size: 6rem;
+  font-weight: 200;
+}
+.clock-greeting h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.focus,
+.quotes {
+  text-align: center;
+  font-style: italic;
+}
+
+.quotes {
+  min-width: 100%;
+  font-size: 1em;
+  color: gray;
+}
+.quotes span {
+  font-size: 1.2em;
+}
+
+.quote-input {
+  width: 8.3rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer span {
+  color: white;
+}
+
+.todo--text {
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.todo--text:hover {
+  color: gray;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo .todo-item {
+  flex: 1;
+  transition: all 1s ease;
+}
+
+.list-container {
+  overflow: scroll;
+}
+
+@media all and (min-width: 375px) {
+  .modal {
+    top: 46.5%;
+    left: 18.5%;
+  }
+}
+@media all and (min-width: 425px) {
+  .modal {
+    top: 45%;
+    left: 28%;
+  }
+}
+@media all and (min-width: 768px) {
+  .modal {
+    top: 50%;
+    left: 59%;
+    padding: 5%;
+  }
+}
+@media all and (min-width: 1300px) {
+  body {
+    max-height: 100vh;
+    padding: 3%;
+  }
+
+  header .profile,
+header span {
+    font-size: 2.3rem;
+  }
+  header .name-input,
+header .focus-input {
+    font-size: 2rem;
+    width: 20%;
+  }
+  header .focus-input {
+    width: 30%;
+  }
+
+  .modal {
+    top: 50%;
+    left: 77%;
+    padding: 2%;
+    min-width: 20rem;
+  }
+  .modal .list-container {
+    padding: 4%;
+    margin: 2% 2%;
+  }
+
+  .clock-greeting {
+    width: 100%;
+  }
+  .clock-greeting h1 {
+    font-size: 12rem;
+  }
+  .clock-greeting h2 {
+    font-size: 3rem;
+  }
+
+  .focus h3 {
+    font-size: 1.8rem;
+  }
+  .focus span {
+    font-size: 2rem;
+  }
+
+  .quotes {
+    font-size: 1.2rem;
+  }
+
+  footer {
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,81 @@
+@media all and (min-width: 375px) {
+   .modal {
+      top: 46.5%;
+      left: 18.5%;
+   }
+}
+@media all and (min-width: 425px) {
+   .modal {
+      top: 45%;
+      left: 28%;
+   }
+}
+@media all and (min-width: 768px) {
+   .modal {
+      top: 50%;
+      left: 59%;
+      padding: 5%;
+   }
+}
+@media all and (min-width: 1300px) {
+   body {
+      max-height: 100vh;
+      padding: 3%;
+   }
+
+   header {
+      .profile,
+      span {
+         font-size: 2.3rem;
+      }
+
+      .name-input,
+      .focus-input {
+         font-size: 2rem;
+         width: 20%;
+      }
+
+      .focus-input {
+         width: 30%;
+      }
+   }
+
+   .modal {
+      top: 50%;
+      left: 77%;
+      padding: 2%;
+      min-width: 20rem;
+
+      .list-container {
+          padding: 4%;
+          margin: 2% 2%;
+      }
+   }
+
+   .clock-greeting {
+      width: 100%;
+      h1 {
+         font-size: 12rem;
+      }
+
+      h2 {
+         font-size: 3rem;
+      }
+   }
+
+   .focus {
+      h3 {
+         font-size: 1.8rem;
+      }
+      span {
+         font-size: 2rem;
+      }
+   }
+   .quotes {
+      font-size: 1.2rem;
+   }
+
+   footer {
+      font-size: 1.5rem;
+   }
+}

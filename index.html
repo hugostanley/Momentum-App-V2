@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="./css/main.css" />
+      <script src="./scripts/scripts.js" defer></script>
+      <title>Document</title>
+   </head>
+   <body>
+      <header>
+         <span class="material-symbols-outlined profile"> person </span>
+         <input class="name-input" type="text" placeholder="What's your name?" data-input-name />
+      </header>
+      <main>
+         <section class="clock-greeting">
+            <h1 class="clock">2:00</h1>
+            <h2 class="greeting"></h2>
+            <h2 class="greeting-name">Fighter</h2>
+         </section>
+
+         <section class="focus">
+            <h3 class="focus__heading">Today's Focus</h3>
+            <span class="focus__text"></span>
+         </section>
+
+         <section class="quotes">
+            <p class="quote-text"></p>
+            <span class="material-symbols-outlined edit"> edit </span>
+         </section>
+      </main>
+      <footer>
+         <span class="material-symbols-outlined"> contrast </span>
+
+         <section class="todo">
+            <span class="todo--text">ToDo</span>
+            <dialog class="modal">
+               <div class="top-todo">
+                  <h4>Today</h4>
+                  <span class="material-symbols-outlined close-btn"> close</span>
+               </div>
+               <div class="list-container"></div>
+               <form action="" method="get"><input class="todo-input" type="text" placeholder="Type here" /></form>
+            </dialog>
+         </section>
+      </footer>
+   </body>
+</html>

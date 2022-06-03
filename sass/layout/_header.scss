@@ -1,0 +1,36 @@
+header {
+   display: flex;
+   align-items: center;
+   gap: 1%;
+}
+
+.profile {
+   cursor: pointer;
+   transition: all 500ms ease;
+   color: white;
+
+   &:hover {
+      color: white;
+   }
+}
+
+.name-input,
+.focus-input {
+   width: 7.4rem;
+
+   border-color:white;
+   transition: all 500ms ease;
+
+   &:hover {
+      border-bottom: 2px solid white;
+   }
+
+   &::placeholder {
+      font-style: italic;
+      color: white;
+   }
+}
+
+.focus-input {
+   width: 11rem;
+}

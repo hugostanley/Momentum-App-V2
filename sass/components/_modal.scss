@@ -1,0 +1,43 @@
+@use './animations' as *;
+.modal {
+   gap: 1em;
+   min-width: 17.6rem;
+   max-width: 27rem;
+
+   padding: 8%;
+   background-color: transparent;
+   border: none;
+   background-color: rgb(0, 0, 0);
+   border-radius: 5%;
+   top: 47%;
+   left: 6%;
+
+   &::backdrop {
+      background: none;
+   }
+}
+
+.modal[open] {
+   animation: slide-up 500ms forwards;
+}
+
+.modal[closing] {
+   display: block;
+   inset: 1;
+   pointer-events: none;
+   animation: slide-down 500ms forwards;
+}
+
+.top-todo {
+   display: flex;
+   justify-content: space-between;
+}
+
+.list-container {
+   height: 10rem;
+   margin: 5% 0;
+}
+
+.todo-input {
+   width: 96%;
+}

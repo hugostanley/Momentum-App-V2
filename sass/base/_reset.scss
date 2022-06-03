@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   line-height: 1.4;
+   color: white;
+   font-family: 'Lato', sans-serif;
+}
+
+*:focus,
+*::placeholder {
+   outline: none;
+   color: white;
+}
+
+a,
+li {
+   text-decoration: none;
+   color: black;
+   list-style: none;
+}
+
+input {
+   border: none;
+   border-bottom: 2px solid white;
+   background: transparent;
+}

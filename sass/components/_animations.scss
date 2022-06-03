@@ -1,0 +1,93 @@
+.input-fade-out {
+   animation-name: fadeInput;
+   animation-duration: 500ms;
+   animation-timing-function: ease;
+   animation-fill-mode: forwards;
+}
+
+@keyframes fadeInput {
+   0% {
+      opacity: 1;
+      visibility: visible;
+      position: initial;
+   }
+
+   50% {
+      opacity: 0;
+   }
+
+   100% {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+
+.text-fade-in {
+   animation-name: fadein;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes fade-out {
+   100% {
+      opacity: 1;
+   }
+
+   0% {
+      opacity: 0;
+   }
+}
+
+@keyframes slide-up {
+   0% {
+      transform: translateY(100%);
+   }
+
+   100% {
+      transform: translateY(0%);
+   }
+}
+
+@keyframes slide-down {
+   0% {
+      transform: translateY(0%);
+   }
+
+   25% {
+      opacity: 1;
+   }
+   100% {
+      transform: translateY(100%);
+      opacity: 0;
+   }
+}
+
+.removetodo {
+   text-decoration: line-through;
+}
+
+.removetododiv {
+   animation: fade-out2 500ms forwards;
+}
+
+@keyframes fade-out2 {
+   0% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
