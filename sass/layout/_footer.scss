@@ -31,3 +31,9 @@ footer {
 .list-container {
    overflow: scroll;
 }
+
+.close-btn,
+.check,
+.delete {
+   cursor: pointer;
+}

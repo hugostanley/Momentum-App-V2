@@ -18,8 +18,16 @@ let quotes = [
    '"There is nothing that works out for the worst that won\'t work out for the better."',
    '"The hardest shot you\'d ever take is the one that you didn\'t take."',
 ]
+
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
 quoteElem.innerText = randomQuote
+
+console.log(quotes.length)
+
+let newQuote = localStorage.getItem('quote')
+console.log(newQuote)
+quotes.push(newQuote)
+console.log(quotes)
 
 // ToDo Selectors
 const toDoBtn = document.querySelector('.todo--text')
@@ -108,6 +116,11 @@ function insertQuote() {
          quoteInput.style.display = 'none'
          quoteElem.style.display = 'block'
          editBtn.style.display = 'initial'
+
+         localStorage.setItem('quote', newQuote)
+         storedInput = localStorage.getItem('quote')
+
+         quotes.push(storedInput)
       }
    })
 }

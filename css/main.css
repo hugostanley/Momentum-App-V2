@@ -271,6 +271,12 @@ footer span {
   overflow: scroll;
 }
 
+.close-btn,
+.check,
+.delete {
+  cursor: pointer;
+}
+
 @media all and (min-width: 375px) {
   .modal {
     top: 46.5%;
@@ -285,7 +291,7 @@ footer span {
 }
 @media all and (min-width: 768px) {
   .modal {
-    top: 50%;
+    top: 46%;
     left: 59%;
     padding: 5%;
   }
@@ -293,7 +299,7 @@ footer span {
 @media all and (min-width: 1300px) {
   body {
     max-height: 100vh;
-    padding: 3%;
+    padding: 1% 5% 1% 5%;
   }
 
   header .profile,
@@ -302,11 +308,11 @@ header span {
   }
   header .name-input,
 header .focus-input {
-    font-size: 2rem;
+    font-size: 1.6rem;
     width: 20%;
   }
   header .focus-input {
-    width: 30%;
+    width: 27.5%;
   }
 
   .modal {
@@ -343,6 +349,17 @@ header .focus-input {
 
   footer {
     font-size: 1.5rem;
+  }
+
+  .quote-input {
+    font-size: 1.3rem;
+    width: 17%;
+    text-align: center;
+  }
+}
+@media all and (min-width: 1365px) {
+  .modal {
+    left: 74%;
   }
 }
 
