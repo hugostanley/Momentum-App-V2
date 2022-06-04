@@ -1,10 +1,3 @@
-.input-fade-out {
-   animation-name: fadeInput;
-   animation-duration: 500ms;
-   animation-timing-function: ease;
-   animation-fill-mode: forwards;
-}
-
 @keyframes fadeInput {
    0% {
       opacity: 1;
@@ -21,13 +14,6 @@
       opacity: 0;
       visibility: hidden;
    }
-}
-
-.text-fade-in {
-   animation-name: fadein;
-   animation-duration: 1s;
-   animation-timing-function: ease;
-   animation-fill-mode: forwards;
 }
 
 @keyframes fadein {
@@ -74,14 +60,6 @@
    }
 }
 
-.removetodo {
-   text-decoration: line-through;
-}
-
-.removetododiv {
-   animation: fade-out2 500ms forwards;
-}
-
 @keyframes fade-out2 {
    0% {
       opacity: 1;
@@ -90,4 +68,25 @@
    100% {
       opacity: 0;
    }
+}
+.input-fade-out {
+   animation-name: fadeInput;
+   animation-duration: 500ms;
+   animation-timing-function: ease;
+   animation-fill-mode: forwards;
+}
+
+.text-fade-in {
+   animation-name: fadein;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   animation-fill-mode: forwards;
+}
+
+.removetodo {
+   text-decoration: line-through;
+}
+
+.removetododiv {
+   animation: fade-out2 500ms forwards;
 }

@@ -2,9 +2,7 @@
 const inputName = document.querySelector('.name-input')
 
 // Clock and Greeting Selectors
-const date = new Date()
-let hours = date.getHours()
-let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
+
 let clock = document.querySelector('.clock')
 let main = document.querySelector('body')
 let greetText = document.querySelector('.greeting')
@@ -78,7 +76,14 @@ function createGreeting(e) {
    }
 }
 
+function getCurrentTime() {
+   date = new Date()
+   hours = date.getHours()
+   minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
+}
+
 function displayHeading() {
+   getCurrentTime()
    if (hours === 12) {
       clock.innerText = `12:${minutes}`
    } else if (hours >= 12 && hours <= 18) {
@@ -98,7 +103,10 @@ function displayHeading() {
    }
 }
 
+
+
 displayHeading()
+setInterval(getCurrentTime(), 1000)
 
 function insertQuote() {
    quoteElem.style.display = 'none'
