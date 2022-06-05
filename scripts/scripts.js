@@ -2,7 +2,6 @@
 const inputName = document.querySelector('.name-input')
 
 // Clock and Greeting Selectors
-
 let clock = document.querySelector('.clock')
 let main = document.querySelector('body')
 let greetText = document.querySelector('.greeting')
@@ -17,13 +16,6 @@ let quotes = [
    '"The hardest shot you\'d ever take is the one that you didn\'t take."',
 ]
 
-let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
-quoteElem.innerText = randomQuote
-
-let newQuote = localStorage.getItem('quote')
-
-quotes.push(`${newQuote}`)
-
 // ToDo Selectors
 const toDoBtn = document.querySelector('.todo--text')
 
@@ -34,19 +26,14 @@ editBtn.addEventListener('click', insertQuote) // Custom Quote Event listener
 // Functions
 function createGreeting(e) {
    if (e.key === 'Enter') {
-      // get name
-      let username = inputName.value
-      // add fade out animation
+      let username = inputName.value // store user input
+      const focusInput = document.createElement('input') //create new focus input element
+      const headerElem = document.querySelector('header') // get header element
+      const nameElem = document.querySelector('.greeting-name') //
+
       inputName.classList.add('input-fade-out')
-      // new focus input
-      const focusInput = document.createElement('input')
       focusInput.classList.add('focus-input')
       focusInput.setAttribute('placeholder', 'Whats your focus for the day?')
-
-      // header elem
-      const headerElem = document.querySelector('header')
-      // username h2
-      const nameElem = document.querySelector('.greeting-name')
       nameElem.classList.add('text-fade-in')
       nameElem.textContent = username
 
@@ -57,14 +44,13 @@ function createGreeting(e) {
 
       focusInput.addEventListener('keypress', e => {
          if (e.key === 'Enter') {
+            let focusActivity = focusInput.value // store focus input
+            let focusText = document.querySelector('.focus__text') // get focus text display elem
+            let usernameDisplay = document.createElement('span')
+
             focusInput.classList.add('input-fade-out')
-            let focusActivity = focusInput.value
-            // ufocustex display
-            let focusText = document.querySelector('.focus__text')
             focusText.classList.add('text-fade-in')
             focusText.textContent = focusActivity
-            // username diosplay
-            let usernameDisplay = document.createElement('span')
             usernameDisplay.textContent = username
 
             headerElem.insertBefore(usernameDisplay, headerElem[1])
@@ -78,6 +64,7 @@ function getCurrentTime() {
    hours = date.getHours()
    minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
 }
+setInterval(getCurrentTime, 1000)
 
 function displayHeading() {
    getCurrentTime()
@@ -87,28 +74,45 @@ function displayHeading() {
       hours = hours % 12
       clock.innerText = `${hours}:${minutes}`
       greetText.textContent += 'Good Afternoon'
-      main.style.backgroundImage = 'url(../images/forest.jfif)'
    } else if (hours >= 19 && hours < 24) {
       hours = hours % 12
       clock.innerText = `${hours}:${minutes}`
       greetText.textContent += 'Good Evening'
-      main.style.backgroundImage = 'url(../images/darkmountain.jpg)'
    } else if (hours >= 1 && hours <= 11) {
       clock.innerText = `${hours}:${minutes}`
       greetText.textContent += 'Good Morning'
-      main.style.backgroundImage = 'url(../images/sunrise.jpg)'
+   }
+
+   changeBg()
+}
+
+function changeBg() {
+   if (greetText.textContent.search('Afternoon') === 5) {
+      main.style.backgroundImage = 'url(./images/forest.jfif)'
+   } else if (greetText.textContent.search('Evening') === 5) {
+      main.style.backgroundImage = 'url(./images/darkmountain.jpg)'
+   } else {
+      main.style.backgroundImage = 'url(./images/sunrise.jpg)'
    }
 }
 
 displayHeading()
-setInterval(getCurrentTime, 1000)
+
+function randomizeQuote() {
+   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+   quoteElem.innerText = randomQuote
+}
+
+randomizeQuote()
 
 function insertQuote() {
    quoteElem.style.display = 'none'
    editBtn.style.display = 'none'
+
    let quoteInput = document.createElement('input')
-   quoteInput.classList.add('quote-input')
    const quoteDiv = document.querySelector('.quotes')
+
+   quoteInput.classList.add('quote-input')
    quoteInput.setAttribute('placeholder', 'Type New Quote Here')
    quoteDiv.insertBefore(quoteInput, quoteDiv.children[0])
 
@@ -119,11 +123,6 @@ function insertQuote() {
          quoteInput.style.display = 'none'
          quoteElem.style.display = 'block'
          editBtn.style.display = 'initial'
-
-         localStorage.setItem('quote', newQuote)
-         storedInput = localStorage.getItem('quote')
-
-         quotes.push(storedInput)
       }
    })
 }
