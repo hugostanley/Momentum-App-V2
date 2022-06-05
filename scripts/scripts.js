@@ -20,12 +20,9 @@ let quotes = [
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
 quoteElem.innerText = randomQuote
 
-console.log(quotes.length)
-
 let newQuote = localStorage.getItem('quote')
-console.log(newQuote)
-quotes.push(newQuote)
-console.log(quotes)
+
+quotes.push(`${newQuote}`)
 
 // ToDo Selectors
 const toDoBtn = document.querySelector('.todo--text')
@@ -103,10 +100,8 @@ function displayHeading() {
    }
 }
 
-
-
 displayHeading()
-setInterval(getCurrentTime(), 1000)
+setInterval(getCurrentTime, 1000)
 
 function insertQuote() {
    quoteElem.style.display = 'none'
