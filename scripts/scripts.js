@@ -88,11 +88,11 @@ function displayHeading() {
 
 function changeBg() {
    if (greetText.textContent.search('Afternoon') === 5) {
-      main.style.backgroundImage = 'url(/images/forest.jfif)'
+      main.classList.add('forest--bg')
    } else if (greetText.textContent.search('Evening') === 5) {
-      main.style.backgroundImage = 'url(/images/darkmountain.jpg)'
+      main.classList.add('dark-mountain--bg')
    } else {
-      main.style.backgroundImage = 'url(/images/sunrise.jpg)'
+      main.classList.add('fsunrise--bg')
    }
 }
 
