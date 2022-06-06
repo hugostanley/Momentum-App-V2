@@ -90,7 +90,7 @@ function changeBg() {
    if (greetText.textContent.search('Afternoon') === 5) {
       main.style.backgroundImage = 'url(./images/forest.jfif)'
    } else if (greetText.textContent.search('Evening') === 5) {
-      main.style.backgroundImage = 'url(./images/darkmountain.jpg)'
+      main.style.backgroundImage = 'url(../images/darkmountain.jpg)'
    } else {
       main.style.backgroundImage = 'url(./images/sunrise.jpg)'
    }
