@@ -161,7 +161,7 @@ body {
 }
 
 .dark-mountain--bg {
-  background-image: url("/images/darkmountain.jpg");
+  background-image: url("../../images/darkmountain.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -92,7 +92,7 @@ function changeBg() {
    } else if (greetText.textContent.search('Evening') === 5) {
       main.classList.add('dark-mountain--bg')
    } else {
-      main.classList.add('fsunrise--bg')
+      main.classList.add('sunrise--bg')
    }
 }
 

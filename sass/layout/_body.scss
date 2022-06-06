@@ -1,32 +1,30 @@
 body {
-    padding: 8%;
-    min-height: 100vh;
-    max-height: 100vh;
-    background-image: url('/images/darkmountain.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   padding: 8%;
+   min-height: 100vh;
+   max-height: 100vh;
+   background-image: url('/images/darkmountain.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
 
 .dark-mountain--bg {
-    background-image: url('/images/darkmountain.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   background-image: url('../../images/darkmountain.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
 
 .forest--bg {
-    background-image: url('/images/forest.jfif');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   background-image: url('/images/forest.jfif');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
 
-.sunrise--bg{
-    background-image: url('/images/sunrise.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.sunrise--bg {
+   background-image: url('/images/sunrise.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
-
-
